@@ -2,6 +2,7 @@
 // A Pop Up that says Hello when you open
 alert("Hello!")
 
+// after clicking inspect and going to "console" this is what you see when you get there
 console.log ("Hello! Hru!")
 console.log ("Hopefully Good!")
 console.log ("Because you matter!")

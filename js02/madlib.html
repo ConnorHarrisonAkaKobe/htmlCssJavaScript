@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Lib Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .story {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Mad Lib Story</h1>
+    <div class="story" id="storyOutput"></div>
+    
+    <script>
+        // CHANGE THESE variables to make them your own
+        const adjective = "saving";
+        const pronoun = "us";
+        const verb = "said";
+        const place = "church";
+        const animal = "chicken";
+        const number = 42;
+        const color = "red";
+        const personName = "Jamal the Pilot";
+        const passenger = "The Guy Riding The Plane"
+        const anotheradjective = "crashing";
+        // Create your OWN NEW story using template literals.  Example: 
+        let story = `
+            <p>During a plane crash, ${personName} prayed like he was in ${place} and said "captain speaking, it seems we have some 
+            ${color} hot ${animal} wings on the menu today."</p>
+            
+            <p>${passenger} ${verb} "Yeah that pliot is not ${adjective} ${pronoun}" and 
+            he just closed his eyes, prayed and count to ${number} for some odd reason.</p>
+            
+            <p>Another passenger said "the plane is ${anotheradjective}?" and ${passenger} said "You got to be kidding me"</p>
+        `;
+        
+        // Display the story
+        document.getElementById('storyOutput').innerHTML = story;
+        
+        // Also log to console
+        console.log("Story:", story);
+    </script>
+</body>
+</html>
