@@ -36,17 +36,21 @@
         let sum = num1 + num2;
         let difference = num1 - num2;
         let product = num1 * num2;
-        let lebron = num1 / num2 
-        let kobe = num1 % num2 
+        let lebron = num1 / num2;
+        let kobe = num1 % num2;
         
         // Display results using template literals
         document.getElementById('addition').textContent = `Addition: ${num1} + ${num2} = ${sum}`;
         document.getElementById('subtraction').textContent = `Subtraction: ${num1} - ${num2} = ${difference}`;
-        // Add the rest of your displays here
-        
+        document.getElementById('multiplication').textContent = `Multiplication: ${num1} * ${num2} = ${product}`;
+        document.getElementById('division').textContent = `Division: ${num1} * ${num2} = ${lebron}`;
+        document.getElementById('remainder').textContent = `Remainder: ${num1} % ${num2} = ${kobe}`;
         // Log to console
         console.log('Sum:', sum);
         console.log('Difference:', difference);
+        console.log('Product:', product);
+        console.log('Quotient:', lebron);
+        console.log('Remainder:', kobe);
         // Add the rest of your console.log statements
     </script>
 </body>
