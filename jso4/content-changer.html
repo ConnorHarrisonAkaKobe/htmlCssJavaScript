@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Changer</title>
+    <style>
+        /* --- Global Styles & 80s Vibe --- */
+:root {
+    --bg-color: #f70a7b; /* Deep pink from the image */
+    --secondary-bg-color: #5d033c; /* Darker pink/purple from the image */
+    --neon-pink: #f70a7b;
+    --neon-red: #ff0000;
+    --neon-orange: #ffa500;
+    --text-color: #5a0000; /* White for readability */
+}
+
+body {
+    background-color: var(--secondary-bg-color);
+    background-image: linear-gradient(to bottom, #11001a, var(--secondary-bg-color) 30%, var(--bg-color) 70%, #ff0073); /* Gradient mimicking the sky */
+    color: var(--text-color);
+    font-family: 'VT323', monospace; /* Retro computer terminal font for body */
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background-attachment: fixed; /* Ensures gradient covers full height */
+}
+
+/* --- Retro Effects --- */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.4) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none; /* Allows clicking through the overlay */
+    z-index: 10;
+}
+
+/* --- Main Layout --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 3px solid var(--neon-red); /* Border color from the image's highlights */
+    box-shadow: 0 0 20px var(--neon-red), inset 0 0 15px rgba(255, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker, slightly transparent background for content */
+    position: relative; /* For z-index context */
+    z-index: 1; /* Above the scanlines */
+}
+
+/* --- Header & Title --- */
+title.h1 {
+    font-family: 'Press Start 2P', cursive; /* Classic arcade/pixel font */
+    color: var(--neon-pink);
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-shadow: 
+        0 0 5px var(--neon-pink), 
+        0 0 10px var(--neon-pink), 
+        0 0 20px #ff00ff; /* Brighter pink/purple glow */
+    margin-bottom: 2rem;
+}
+
+header .subtitle {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--neon-orange); /* Using orange for subtitle accent */
+    text-shadow: 
+        0 0 5px var(--neon-orange), 
+        0 0 10px #ff8c00;
+}
+
+/* --- Main Content: Image & Narrative --- */
+main img {
+    display: block;
+    max-width: 100%;
+    margin: 1.5rem auto;
+    border: 2px solid var(--neon-orange); /* Border color from the image's subtle highlights */
+    box-shadow: 0 0 15px var(--neon-orange), 0 0 30px rgba(255, 165, 0, 0.5);
+}
+
+.narrative p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    color: var(--text-color); /* Ensure text is white */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed var(--neon-red); /* Footer border matching general theme */
+    color: var(--neon-red);
+    font-size: 1rem;
+    text-shadow: 0 0 5px var(--neon-red);
+}
+        
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 id="title">i like monkeys</h1>
+        <p id="description">i like bananas.</p>
+        <p id="info">i like baskteball.</p>
+    </div>
+    
+    <script>
+        // Select elements by their ID
+        let titleElement = document.getElementById('title');
+        let descElement = document.getElementById('description');
+        let infoElement = document.getElementById('info');
+        
+        // Change content using textContent
+        titleElement.textContent = 'JavaScript Changed This!';
+        descElement.textContent = 'This text was updated using JavaScript DOM manipulation.';
+        
+        // Use innerHTML when you want to add HTML tags inside
+        infoElement.innerHTML = 'This element now has <small>bold text</small> and <mark>italic text</mark>!';
+        
+        // Add a CSS class to an element
+        descElement.classList.add('highlight');
+        
+        // Change inline styles directly
+        titleElement.style.color = '#2196f3';
+        
+        // Log to console
+        console.log('Content successfully updated!');
+    </script>
+</body>
+</html>
